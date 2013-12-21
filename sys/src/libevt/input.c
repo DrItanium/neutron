@@ -4,7 +4,7 @@
 #include <event.h>
 #include <cursor.h>
 #include <clips.h>
-#include <lib/evt.h>
+#include "evt.h"
 
 
 /* We init both keyboard and mouse */

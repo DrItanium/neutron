@@ -3,7 +3,7 @@
 #include <draw.h>
 #include <event.h>
 #include <clips.h>
-#include <lib/evt.h>
+#include "evt.h"
 
 static void CallEResized(void* theEnv);
 static int CallGetWindow(void* theEnv);

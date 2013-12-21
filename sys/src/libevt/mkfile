@@ -1,8 +1,8 @@
 <$PLAN9/src/mkhdr
 
 LIB=libevt.a
-LDFLAGS="-lrt -lm -lc -L/usr/lib"
-CFLAGS=-Os -I$ELECTRON_PLATFORM_ROOT/sys/include -I/usr/include
+LDFLAGS="-lrt -lm -lc -L/usr/lib /usr/local/lib/libelectron.a"
+CFLAGS=-Os -I/usr/include -I/usr/local/include/electron
 
 OFILES=\
        input.$O\

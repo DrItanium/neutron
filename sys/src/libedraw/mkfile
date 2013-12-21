@@ -2,7 +2,7 @@
 
 LIB=libedraw.a
 LDFLAGS="-lrt -lm -lc -L/usr/lib"
-CFLAGS=-Os -I$ELECTRON_PLATFORM_ROOT/sys/include -I/usr/include
+CFLAGS=-Os -I/usr/include -I/usr/local/include/electron/
 
 OFILES=\
        edraw.$O\

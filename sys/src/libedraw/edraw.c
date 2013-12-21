@@ -1,8 +1,8 @@
-#include<u.h>
-#include<libc.h>
-#include<draw.h>
-#include<clips.h>
-#include<lib/edraw.h>
+#include <u.h>
+#include <libc.h>
+#include <draw.h>
+#include <clips.h>
+#include "edraw.h"
 
 static int imageExternalAddressID;
 static int rectangleExternalAddressID;
