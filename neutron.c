@@ -1,8 +1,8 @@
 /*
- * efssrv
+ * neutron 
  * Copyright (c) 2013, Joshua Scoggins 
  * All rights reserved.
- * 
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
  *     * Redistributions of source code must retain the above copyright
@@ -10,7 +10,7 @@
  *     * Redistributions in binary form must reproduce the above copyright
  *       notice, this list of conditions and the following disclaimer in the
  *       documentation and/or other materials provided with the distribution.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -22,17 +22,28 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+#include <u.h>
+#include <libc.h>
+#include <draw.h>
+#include <event.h>
+#include <stdio.h>
+#include <clips.h>
 
-//fsoverride.c
-extern void DefineFSOverrideFunctions(void* theEnv);
-extern int EFS_LoadStarCommand(void*);
-extern int EFS_LoadCommand(void*);
-extern int EFS_BatchCommand(void*);
-extern int EFS_BatchStarCommand(void*);
-extern int EFS_EnvBatchStar(void*, char*);
-extern int EFS_EnvLoad(void*, char*);
-extern int EFS_OpenBatch(void*, char*, int);
-extern int EFS_Batch(void*, char*);
-extern int EFS_OpenFunction(void*);
-extern int EFS_RemoveFunction(void*);
-extern int EFS_RenameFunction(void*);
+
+int main(int argc, char *argv[]) {
+   void *theEnv;
+
+   /* Do this ahead of anything else so we don't have issues with
+    * initialization across multiple environments */
+   if(initdraw(0,0, "neutron") < 0) {
+      sysfatal("initdraw failed: %r");
+      exits("initdraw");
+   }
+   einit(Ekeyboard|Emouse);
+
+   theEnv = CreateEnvironment();
+   RerouteStdin(theEnv,argc,argv);
+   CommandLoop(theEnv);
+
+   return(-1);
+}

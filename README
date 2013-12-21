@@ -1,3 +1,3 @@
-The electron platform is a merger of the electron-filesystem, electron,
-efssrv, and chicanery. It will be updated as time goes on with new tools but 
-this is a centralized project to create a development platform
+Neutron is a version of electron but with graphical additions thanks to
+plan9port integration. It uses the default electron runtime's libelectron.a in
+addition to its own stuff to create the neutron program
