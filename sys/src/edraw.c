@@ -2,7 +2,7 @@
 #include <libc.h>
 #include <draw.h>
 #include <clips.h>
-#include <neutron.h>
+#include "neutron.h"
 
 static int imageExternalAddressID;
 static int rectangleExternalAddressID;

@@ -1,7 +1,19 @@
 <$PLAN9/src/mkhdr
-BIN=/usr/local/bin
-LDFLAGS="-lrt -lm -lc -L/usr/lib"  
-CFLAGS=-Os -I$ELECTRON_PLATFORM_ROOT/sys/include -I/usr/include -I/usr/local/include/electron
-DIRS = libneutron
+# chicanery is the version of electron that uses plan9port
+TARG=neutron
+BIN=/usr/local/bin/
+LDFLAGS="-lrt -lm -lc -L/usr/lib /usr/local/lib/libelectron.a"
+CFLAGS=-Os -I/usr/include -I/usr/local/include/electron 
 
-<$PLAN9/src/mkdirs
+OFILES=\
+       chicanery.$O\
+       userfunctions.$O\
+       input.$O\
+       draw.$O\
+       evt.$O\
+       edraw.$O\
+
+HFILES=\
+      neutron.h\
+
+<$PLAN9/src/mkone
