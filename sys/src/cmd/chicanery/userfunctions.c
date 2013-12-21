@@ -42,8 +42,7 @@
 /***************************************************************************/
 
 #include <clips.h>
-#include <lib/evt.h>
-#include <lib/edraw.h>
+#include "neutron.h"
 void UserFunctions(void);
 void EnvUserFunctions(void *);
 

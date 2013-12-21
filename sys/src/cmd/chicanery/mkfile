@@ -2,12 +2,10 @@
 # chicanery is the version of electron that uses plan9port
 TARG=chicanery
 BIN=/usr/local/bin/
-LDFLAGS="-lrt -lm -lc -L/usr/lib"
-CFLAGS=-Os -I/usr/include -I/usr/local/include/electron
-LIB=/usr/local/lib/libelectron.a ../../libedraw/libedraw.a ../../libevt/libevt.a
+LDFLAGS="-lrt -lm -lc -L/usr/lib ../../libneutron/libneutron.a /usr/local/lib/libelectron.a"
+CFLAGS=-Os -I/usr/include -I/usr/local/include/electron -I../../include
 
-OFILES=\
-       chicanery.$O\
+OFILES=chicanery.$O\
        userfunctions.$O\
 
 <$PLAN9/src/mkone

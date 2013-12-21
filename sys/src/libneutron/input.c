@@ -4,7 +4,7 @@
 #include <event.h>
 #include <cursor.h>
 #include <clips.h>
-#include "evt.h"
+#include <neutron.h>
 
 
 /* We init both keyboard and mouse */

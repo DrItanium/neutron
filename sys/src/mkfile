@@ -1,9 +1,7 @@
 <$PLAN9/src/mkhdr
-BIN=$ELECTRON_PLATFORM_ROOT/sys/bin
-LDFLAGS="-lrt -lm -lc -L/usr/lib /usr/local/lib/libelectron.a" 
+BIN=/usr/local/bin
+LDFLAGS="-lrt -lm -lc -L/usr/lib"  
 CFLAGS=-Os -I$ELECTRON_PLATFORM_ROOT/sys/include -I/usr/include -I/usr/local/include/electron
-DIRS = libevt\
-       libedraw\
-       cmd/chicanery\
+DIRS = libneutron
 
 <$PLAN9/src/mkdirs
