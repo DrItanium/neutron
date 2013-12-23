@@ -1,5 +1,3 @@
-sys/bin
-sys/lib
-sys/share/man
-*.o 
+*.o
+o.neutron
 *.swp
